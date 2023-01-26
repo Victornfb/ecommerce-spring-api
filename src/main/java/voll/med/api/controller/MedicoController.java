@@ -36,7 +36,7 @@ public class MedicoController {
         Pageable paginacao
     ) {
         return this.repository
-            .findAll(paginacao)
+            .findAllByAtivoTrue(paginacao)
             .map(DadosListagemMedico::new);
     }
 
@@ -51,6 +51,16 @@ public class MedicoController {
     ) {
         Medico medico = this.repository.getReferenceById(id);
         medico.atualizarDados(dados);
+    }
+
+    @DeleteMapping("/{id}")
+    @Transactional
+    public void deletar(
+        @PathVariable
+        Long id
+    ) {
+        Medico medico = this.repository.getReferenceById(id);
+        medico.exluir();
     }
 
 }
