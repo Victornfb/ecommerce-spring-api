@@ -22,6 +22,9 @@ public record DadosCadastroMedico(
     @NotNull
     EnumEspecialidade especialidade,
 
+    @NotBlank
+    String telefone,
+
     @NotNull
     @Valid
     DadosEndereco endereco
