@@ -1,2 +1,8 @@
-package voll.med.api.medico;public enum EnumEspecialidade {
+package voll.med.api.medico;
+
+public enum EnumEspecialidade {
+    ORTOPEDIA,
+    CARDIOLOGIA,
+    GINECOLOGIA,
+    DERMATOLOGIA
 }
